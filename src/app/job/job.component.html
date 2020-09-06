@@ -1,0 +1,104 @@
+<div class="container" #TABLE #table>
+    <br>
+    <div class="row">
+        
+        <div class="col-md-3">
+            <h3 style="color:black">Job Details</h3>
+        <input type="file" (change)="onFileChange($event)" multiple="false" >
+            <br>
+            <button   (click)="exportAsXLSX()" class="btn-aspen-orange ">Export</button>&nbsp;
+            <button type="button" class="btn-aspen-orange" (click)="add()">Add&nbsp;<i class="fa fa-plus"></i></button>
+
+        </div>
+        
+            <table class="table table-bordered">
+                <tbody>
+              <tr *ngFor="let row of data">
+                    <td *ngFor="let val of row">
+                        {{val}}
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            
+        
+    </div>
+    <br>
+    <!-- <app-employee-edit   (callAllEmployees)="viewAllEmployees()" (addVisibleChild)="addVisible=addVisibleChild" ></app-employee-edit>  -->
+<p-dialog header="Add Employee" [(visible)]="addVisible" [modal]="true" [style]="{width: '80vw'}" [maximizable]="true" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="true">
+    <app-employee-add   (callAllEmployees)="viewAllEmployees()" (addVisibleChild)="addVisible=addVisibleChild" ></app-employee-add> 
+           
+</p-dialog>
+    
+ <div *ngIf="!addVisible">
+    <div class="col-xs-3">
+        
+    <input class="form-control" type="text" 
+      name="search" [(ngModel)]="searchText"
+       autocomplete="off" placeholder="&#61442; 
+        Start searching for a employee ">
+        <div *ngIf="(employees | filter: searchText).length === 0">No matching records found</div>
+        </div>
+        <br> <br><br>
+        <!-- <div id="loadImageBootstrapStyleDiv" style="background-color:black; width: 520px; padding: 10px">
+            <img src="http://localhost:8013/downloadFile/17" class="rounded" alt="Grokonez-About Image" width="250px" height="auto">
+            <img src="http://localhost:8013/downloadFile/15" class="rounded-circle" alt="Grokonez-About Image" width="250px" height="auto">
+          </div> -->
+    <div class="row">
+        <div class="col-md-12">
+            <table width="100%" id="t01">
+                <thead>
+                    <tr>
+                        <th>EmployeeID</th>
+                        <th>FirstName</th>
+                        <th>MobileNumber</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees | filter:searchText 
+                    | paginate: { itemsPerPage: 5, currentPage: p }">
+                       
+                        <td width="10%">{{employee.empid}}</td>
+                        <td width="10%">{{employee.firstName}}</td>
+                        <td width="10%">{{employee.mobile}}</td>
+                        <td width="10%">{{employee.email}}</td>
+                       
+                        <td width="20%">
+                            <button class="btn-aspen-orange" *ngIf="!isEditable" mat-icon-button (click)="onEditClick(employee.empid)">
+                                
+                                <mat-icon>edit</mat-icon>
+                              </button> &nbsp;
+                              <!-- <button type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirm"></button> -->
+                              <button class="btn-aspen-orange" *ngIf="!isEditable" mat-icon-button (click)="confirm(employee.empid)">
+                                <mat-icon>delete</mat-icon>
+                              </button>
+                        </td>
+
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <br>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+</div>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+
+<!-- <div class="example-button-row">
+    <button mat-fab>Basic</button>
+    <button mat-fab class="btn-aspen-orange">Primary</button>
+    <button mat-fab color="accent">Accent</button>
+    <button mat-fab color="warn">Warn</button>
+    <button mat-fab disabled>Disabled</button>
+    <button mat-fab aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <a mat-fab routerLink=".">Link</a>
+  </div> -->

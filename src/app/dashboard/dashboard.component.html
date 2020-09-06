@@ -1,0 +1,49 @@
+<div class="dash">
+    <div class="col-md-3 ">
+        <div class="card" style="width:200px">
+            <div class="card-body">
+                <h2 class="card-title">{{clients}}</h2>
+                <p class="card-text">Clients</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 ">
+        <div class="card" style="width:200px">
+            <div class="card-body">
+                <h2 class="card-title">20</h2>
+                <p class="card-text">Sites</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 ">
+        <div class="card" style="width:200px">
+            <div class="card-body">
+                <h2 class="card-title">18</h2>
+                <p class="card-text">Employees</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 ">
+        <div class="card" style="width:200px">
+            <div class="card-body">
+                <h2 class="card-title">60</h2>
+                <p class="card-text">Locations</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-md-6 chart1">
+<highcharts-chart
+   [Highcharts] = "highcharts" 
+   [options] = "chartOptions" 
+   style = "width: 100%; height: 400px; display: block;">
+</highcharts-chart>
+</div>
+<div class="col-md-6 chart1">
+    <highcharts-chart
+       [Highcharts] = "highcharts1" 
+       [options] = "chartOptions1" 
+       style = "width: 100%; height: 400px; display: block;">
+    </highcharts-chart>
+    </div>

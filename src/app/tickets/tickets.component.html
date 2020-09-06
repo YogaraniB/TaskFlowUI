@@ -1,0 +1,81 @@
+
+
+<div class="container">
+    <div class="super_container" style=" 
+    background-repeat: no-repeat; background-size: cover; position: static">
+    <div class="body">
+        <br>
+        <h3 style="color:black">Ticket Details </h3>
+  <br>
+    <form [formGroup]="ticketform" (ngSubmit)="onSubmit()">
+
+        <div class="form-group col-5">
+            <label>Ticket ID <span style="color:#FF0000">*</span></label>
+            <input type="number" formControlName="ticketid" placeholder="Enter Ticket ID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticketid.errors }" />
+            <div *ngIf="f.ticketid.errors" class="invalid-feedback">
+                <div *ngIf="f.ticketid.errors.required">Ticket ID  is required</div>
+            </div>
+        </div>
+        <div class="form-group col-5">
+            <label>Employee <span style="color:#FF0000">*</span></label>
+
+
+            <p-autoComplete formControlName="empid" placeholder="Enter Employee"
+            [suggestions]="EmployeeList" (completeMethod)="search($event)"></p-autoComplete>
+            
+            
+             <!-- <input type="text" formControlName="empid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.empid.errors }" /> -->
+            <div *ngIf="submitted && f.empid.errors" class="invalid-feedback">
+                <div *ngIf="f.empid.errors.required">Employee Name is required</div>
+            </div>
+        </div>
+
+            <div class="form-group col-5">
+                <label>Severity <span style="color:#FF0000">*</span></label><br>
+                <p-dropdown [options]="severity"  formControlName="severity" filter="true">
+                </p-dropdown>
+              
+                <div *ngIf="submitted && f.severity.errors" class="invalid-feedback">
+                    <div *ngIf="f.severity.errors.required">Severity is required</div>
+                </div>
+            </div><br>
+
+            <div class="form-group col-5">
+                <label>Assignee <span style="color:#FF0000">*</span></label>
+    
+                <p-autoComplete formControlName="assignee" placeholder="Enter Assignee"
+                [suggestions]="EmployeeList" (completeMethod)="search($event)"></p-autoComplete>
+                <div *ngIf="submitted && f.assignee.errors" class="invalid-feedback">
+                    <div *ngIf="f.assignee.errors.required">Assignee is required</div>
+                </div>
+            </div>
+<br>
+            <div class="form-group col-5">
+                <label>Reportee <span style="color:#FF0000">*</span></label>
+               
+                <p-autoComplete formControlName="reporty" placeholder="Enter Reportee"
+                [suggestions]="EmployeeList" (completeMethod)="search($event)"></p-autoComplete>
+                
+                <div *ngIf="submitted && f.reporty.errors" class="invalid-feedback">
+                    <div *ngIf="f.reporty.errors.required">Reportee is required</div>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group col-5">
+                <label>Description <span style="color:#FF0000">*</span></label>
+                <textarea type="text" placeholder="Enter your description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                    <div *ngIf="f.description.errors.required">Please enter the description</div>
+                </div>
+            </div>
+      
+
+            <div class="text-center">
+                <button  class="btn-aspen-orange" type="submit">Save</button> &nbsp;
+                &nbsp; &nbsp; &nbsp; <button class="btn-aspen-orange" (click)="cancel()" type="reset">Cancel &nbsp; &nbsp; </button>
+            </div>
+            </form>
+
+    </div>
+

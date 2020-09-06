@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="super_container" style=" 
+    background-repeat: no-repeat; background-size: cover; position: static">
+    <div class="body">
+        <br>
+        <h3 style="color:black">Location Details </h3>
+  <br>
+    <form [formGroup]="locationform" (ngSubmit)="onSubmit()">
+
+            <div class="form-group col-5">
+                <label>Client <span style="color:#FF0000">*</span></label><br>
+                <p-dropdown [options]="Client"  formControlName="client" filter="true">
+                </p-dropdown>
+                <div *ngIf="submitted && f.client.errors" class="invalid-feedback">
+                    <div *ngIf="f.client.errors.required">Client is required</div>
+                </div>
+            </div><br>
+
+            <div class="form-group col-5"> 
+                <label>Site <span style="color:#FF0000">*</span></label><br>
+                <p-dropdown [options]="Site"  formControlName="site" filter="true">
+                </p-dropdown>
+                <div *ngIf="submitted && f.site.errors" class="invalid-feedback">
+                    <div *ngIf="f.site.errors.required">Site is required</div>
+                </div>
+            </div>    
+<br>
+                <div class="form-group col-5">
+                    <label>Zone <span style="color:#FF0000">*</span></label>
+                    <input type="text" formControlName="zone" placeholder="Enter Zone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zone.errors }" />
+                    <div *ngIf="submitted && f.zone.errors" class="invalid-feedback">
+                        <div *ngIf="f.zone.errors.required">Zone is required</div>
+                    </div>
+                </div>
+<br>
+                <div class="form-group col-5">
+                    <label>Block <span style="color:#FF0000">*</span></label>
+                    <input type="text" formControlName="block" placeholder="Enter Block" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.block.errors }" />
+                    <div *ngIf="submitted && f.block.errors" class="invalid-feedback">
+                        <div *ngIf="f.block.errors.required">Block is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group col-5">
+                    <label>Floor <span style="color:#FF0000">*</span></label>
+                    <input type="text" formControlName="floor" placeholder="Enter Floor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.floor.errors }" />
+                    <div *ngIf="submitted && f.floor.errors" class="invalid-feedback">
+                        <div *ngIf="f.floor.errors.required">Floor is required</div>
+                    </div>
+                </div>
+            <br>
+
+            <div class="text-center">
+                <button class="btn-aspen-orange"  type="submit">Save</button> &nbsp;
+                &nbsp; &nbsp; &nbsp; <button class="btn-aspen-orange" (click)="cancel()" type="reset">Cancel &nbsp; &nbsp; </button>
+            </div>
+            </form>
+
+    </div>

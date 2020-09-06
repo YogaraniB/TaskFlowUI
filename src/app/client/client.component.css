@@ -1,0 +1,17 @@
+.add
+{
+    float:right;
+}
+h2,th
+{
+    color: #2A6EBB;
+}
+.btns
+{
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+h2{
+    font-weight: 700;
+}

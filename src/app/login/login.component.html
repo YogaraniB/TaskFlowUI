@@ -1,0 +1,22 @@
+<div align="center">
+   <div class=" card border-dark ">
+      <div class="card-header text-white btn-aspen-blue">Login</div>
+      <div class="card-body">
+         <h5 class="card-title">TASKFLOW</h5>
+         <p class="card-text">
+         <div>
+            User Name : <input type="text" name="username" [(ngModel)]="username">
+            <br><br>
+            Password : <input type="password" name="password" [(ngModel)]="password">
+            <br><br>
+            <div *ngIf="invalidLogin" [ngStyle]="{'color':'red'}">INVALID CREDENTIALS</div>
+            <button (click)=checkLogin() class="btn-aspen-orange">
+               Login
+            </button>
+         </div>
+         <br>
+      </div>
+   </div>
+
+
+</div>

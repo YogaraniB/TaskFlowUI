@@ -1,0 +1,52 @@
+
+<div class="container">
+    <div class="row">
+        
+            <br>
+            <h3 style="color:black">Attendance </h3>
+       
+    </div>
+    <br>
+   
+
+    <input type="file" style="width:200px" #fileInput (change)="fileChoose($event)"  id="customFile" ([ngModel])="file" multiple="false" accept=".xlsx" >
+    <br>
+    <button class="btn-aspen-orange" (click)="import()">Import</button>
+    <br>
+    <br>
+    <small *ngIf="notExcelFile" [ngStyle]="{'color':'red'}">Kindly Select Excel type file</small>
+    <div class="row">
+        <div class="col-md-12">
+            <table width="100%" id="t01">
+                <thead>
+                    <tr>
+                        <th>EmployeeID</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Total Days</th>
+                        <th>Month</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees ">
+                       
+                        <td width="10%">{{employee.empid}}</td>
+                        <td width="10%">{{employee.firstName}}</td>
+                        <td width="10%">{{employee.lastName}}</td>
+                        <td width="10%">{{employee.email}}</td>
+                        <td width="10%">{{employee.mobile}}</td>
+                        <td width="10%">{{employee.totalDays}}</td>
+                        <td >{{employee.month}}</td>
+                       
+                        
+
+                    </tr>
+                   
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>

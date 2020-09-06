@@ -1,0 +1,26 @@
+<div class="body"><h2> Feedback Form </h2></div>
+<div class="container">
+    <div class="super_container">
+
+
+<div class="container">
+  <form [formGroup]="feedbackForm" class="form-group" (ngSubmit)="onSubmit()" >
+    <label for="fname">First Name <span style="color:#FF0000">*</span></label>
+    <input type="text" id="fname" formControlName="firstName" placeholder="Your name..">
+
+    <label for="lname">Last Name <span style="color:#FF0000">*</span></label>
+    <input type="text" id="lname" formControlName="lastName" placeholder="Your last name..">
+
+    <label for="fname">Email <span style="color:#FF0000">*</span></label>
+    <input type="text" id="email" formControlName="email" placeholder="Your email..">
+
+    <label for="subject">Subject <span style="color:#FF0000">*</span></label>
+    <textarea id="subject" formControlName="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <button  class="btn-aspen-orange" type="submit">Submit</button> &nbsp;
+  </form>
+</div>
+
+    </div>
+    </div>
+

@@ -1,0 +1,204 @@
+/* You can add global styles to this file, and also import other style files */
+
+//
+// Your variable overrides
+//body overrides
+$body-bg: #F0F5FA;
+$body-color: #333333;
+//aspen theme color
+$blue: #2A6EBB;
+$orange: #FF7900;
+$green: #69BE28;
+$yellow: #FCB116;
+//map bootstrap theme with  aspen theme
+$primary: $blue;
+$secondary: $orange;
+$success: $green;
+$warning: $yellow;
+//links
+$link-color: #337ab7;
+$link-decoration: none;
+$link-hover-color: #23527c;
+$link-hover-decoration: underline;
+$grid-gutter-width: 15px;
+$card-spacer-x: 0.5rem;
+$card-spacer-y: 0.5rem;
+$card-border-radius: 0;
+$theme-colors: ( "light-blue":#9DCBF0);
+$nav-tabs-link-active-color: #ffffff;
+$nav-tabs-link-active-bg: $blue;
+//$nav-tabs-border-radius:  0;
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/ngx-toastr/toastr";
+@import '~ngx-toastr/toastr.css';
+
+nav.nav-pills {
+  &a {
+    color: $blue;
+  }
+}
+
+.nav-link {
+  margin-right: 2px;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.nav-dropdown {
+  padding: 0.5rem 1rem;
+  color: $blue;
+
+  &.active,
+  &.nav-dropdown[aria-expanded=true],
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.nav-dropdown-item {
+  &.active,
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.nav-tabs {
+  .nav-link {
+    border: $nav-tabs-border-width solid $blue !important;
+    border-bottom: 0 !important;
+  }
+}
+
+.btn.btn-xs {
+  @include button-size( 2px, 7px, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+// thead{ text-align: center !important;}
+thead th {
+  color: $blue !important;
+  font-weight: bold !important;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.navbar {
+  margin: 40px 0;
+}
+
+.body-bg {
+  background-color: $body-bg;
+}
+
+.jaspero__dialog-title[_ngcontent-c5] {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: .005em;
+  line-height: 26px;
+  margin-bottom: 20px;
+  padding: 24px 24px 0;
+  text-transform: capitalize;
+  background-color: #2A6EBB;
+}
+
+.jaspero__dialog-content[_ngcontent-c5] {
+  padding: 0 24px 24px;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.jaspero__dialog-actions[_ngcontent-c5] {
+  min-height: 52px;
+  padding: 8px 8px 8px 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.jaspero__dialog-actions[_ngcontent-c5] button.default[_ngcontent-c5] {
+  color: inherit;
+}
+
+// .jaspero__dialog-actions[_ngcontent-c5] button[_ngcontent-c5] {
+//   min-width: 88px;
+//   min-height: 36px;
+//   margin: 6px 8px;
+//   padding: 0 16px;
+//   display: inline-block;
+//   position: relative;
+//   overflow: hidden;
+//   outline: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   cursor: pointer;
+//   background: none;
+//   border: 0;
+//   border-radius: 2px;
+//   transition: all .4s cubic-bezier(.25, .8, .25, 1);
+//   color: inherit;
+//   font-family: inherit;
+//   font-size: 14px;
+//   font-style: inherit;
+//   font-variant: inherit;
+//   font-weight: 500;
+//   letter-spacing: inherit;
+//   line-height: 36px;
+//   text-align: center;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   vertical-align: top;
+//   white-space: nowrap;
+// }
+
+.jaspero__dialog-actions[_ngcontent-c5] button.primary[_ngcontent-c5] {
+  background-color: inherit;
+  color: #FF7900 !important;
+}
+
+.jaspero__dialog-actions[_ngcontent-c5] button[_ngcontent-c5] {
+  min-width: 88px;
+  min-height: 36px;
+  margin: 6px 8px;
+  padding: 0 16px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+}

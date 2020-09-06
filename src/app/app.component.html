@@ -1,0 +1,31 @@
+<ngx-loading-bar color="#FF7900" height="9px" >
+ </ngx-loading-bar>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="side" #sidenav closed position="start">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    <!-- <img src="./assets/tvm.png" class="logo"/>   -->
+                 <!-- <img src="./assets/task.jpg" 
+                width="15%" height="90%" class="logo"/>  -->
+                <img src="./assets/logo (1).png" 
+                width="20%" height="70%" />
+              
+                <ngx-spinner
+                bdColor="rgba(51,51,51,0.8)"
+                size="medium"
+                color="#FF7900"
+                type="ball-spin-clockwise"
+              ><br>
+                <p style="font-size: 20px; color: white">Loading...</p>
+              </ngx-spinner>
+    <a *ngIf="authentocationService.isUserLoggedIn()"  [ngStyle]="{'color':'white'}" mat-button class="log" (click)="logout()">
+      <i class="fa fa-user user"></i>  {{user}}<br> Logout</a>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

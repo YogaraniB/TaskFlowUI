@@ -1,0 +1,223 @@
+
+<!-- <div class="text-center"><h1 style="color:black"> Add Employee</h1></div> -->
+<span style="color:#FF0000">*</span>
+<span style="color: black">Mandatory Field</span>
+ 
+<div class="container">
+    <div class="super_container" style="background-repeat: no-repeat; background-size: cover; position: static">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="col-6" >
+            <div align="left" style="width:105%;height:150%;">
+            <div class=" card border-dark ">
+               <div class="card-header "><p style="color: black;">Identity and Name</p></div>
+               <div class="card-body">
+                  <p class="card-text">
+                  <div>
+                   
+                        <div class="form-row">
+                          <div class="form-group col-5">
+                              <b><label>Employee ID <span style="color:#FF0000">*</span></label></b>
+                              <input type="number" formControlName="EmployeeID" class="form-control" style="max-width:70%;"
+                               [ngClass]="{ 'is-invalid': submitted && f.EmployeeID.errors }" />
+                              <div *ngIf="submitted && f.EmployeeID.errors" class="invalid-feedback">
+                                  <div *ngIf="f.EmployeeID.errors.required">EmployeeID is required</div>
+                              </div>
+                          </div>
+                  
+                          <div class="form-group col-5">
+                              <b><label>Designation <span style="color:#FF0000">*</span></label></b>
+                             
+                              <p-dropdown [options]="Designation"  formControlName="Designation" filter="true">
+                              </p-dropdown>
+                             
+                              <div *ngIf="submitted && f.Designation.errors" class="invalid-feedback">
+                                  <div *ngIf="f.Designation.errors.required">Designation is required</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-5">
+                            <b><label>FirstName <span style="color:#FF0000">*</span></label></b>
+                            <input type="text" formControlName="FirstName" class="form-control" style="max-width:70%; "
+                            [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }" />
+                            <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.FirstName.errors.required">FirstName is required</div>
+                            </div>
+                        </div>
+                
+                        <div class="form-group col-5">
+                            <b><label>LastName <span style="color:#FF0000">*</span></label></b>
+                            <input type="text" formControlName="LastName" class="form-control" style="max-width:100%; "
+                             [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }" />
+                            <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.LastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="form-row">
+                        <div class="form-group col-5">
+                            <b><label>MobileNumber <span style="color:#FF0000">*</span></label></b>
+                            <input type="number" formControlName="MobileNumber" class="form-control" style="max-width:70%; "
+                            [ngClass]="{ 'is-invalid': submitted && f.MobileNumber.errors }" />
+                            <div *ngIf="submitted && f.MobileNumber.errors" class="invalid-feedback">
+                                <div *ngIf="f.MobileNumber.errors.required">MobileNumber is required</div>
+                            </div>
+                        </div>
+                
+                        <div class="form-group col-5">
+                            <b><label>Email <span style="color:#FF0000">*</span></label></b>
+                            <input type="email" formControlName="Email" class="form-control" style="max-width:100%; "
+                            [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+                            <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                                <div *ngIf="f.Email.errors.required">Email is required</div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <br>
+               </div>
+            </div>
+         </div>
+        </div>
+        <div class="col-6">
+         <div align="left" style="width:105%; height: 200px;margin-left:5%; ">
+            <div class=" card border-dark " style="height:220px;">
+               <div class="card-header "><p style="color: black;">Role</p></div>
+               <div class="card-body">
+                  
+                  <p class="card-text">
+                  <div>
+                    <div class="form-group col-5">
+                        <b><label>User Role</label></b>
+                        <p-dropdown [options]="UserRole"  formControlName="UserRole" filter="true">
+                        </p-dropdown>
+                       
+                        <div *ngIf="submitted && f.UserRole.errors" class="invalid-feedback">
+                        <div *ngIf="f.UserRole.errors.required">UserRole is required</div>
+                        </div>
+                        </div>
+                        
+                  </div>
+                  <br>
+               </div>
+            </div>
+
+            <div class=" card border-dark "style="height:100%">
+                  
+                <div class="card-header text-black ">Client info</div>
+                <div class="card-body">
+                   <p class="card-text">
+                   <div>
+                     <div class="form-row">
+                         <div class="form-group col-9">
+                            <b><label>Client</label></b>
+                            <p-dropdown [options]="Client"  formControlName="Client" filter="true">
+                            </p-dropdown>
+                            
+                             <div *ngIf="submitted && f.Client.errors" class="invalid-feedback">
+                                 <div *ngIf="f.Client.errors.required">Client is required</div>
+                             </div>
+                         </div>
+                 
+                         <div class="form-group col-9">
+                            <b><label>Site</label></b>
+                            <p-dropdown [options]="Site"  formControlName="Site" filter="true">
+                            </p-dropdown>
+                            
+                             <div *ngIf="submitted && f.Designation.errors" class="invalid-feedback">
+                                 <div *ngIf="f.Site.errors.required">Site is required</div>
+                             </div>
+                         </div>
+                      
+                 </div>
+                   </div>
+                   <br>
+                </div>
+              </div>
+        
+         </div>
+          
+ 
+
+        </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col-6" >
+            <div align="left" style="width:105%;height:150%;">
+                <div class=" card border-dark " >
+
+                    <div class="card-header text-black  "><p style="color: black;">Location</p></div>
+                    <div class="card-body">
+                        
+                       <p class="card-text">
+                       <div>
+                         <div class="form-row">
+                             <div class="form-group col-3">
+                                 <b><label>Block</label></b>
+                                 <p-dropdown [options]="Block"  formControlName="Block" filter="true">
+                                </p-dropdown>
+                                 
+                                 <div *ngIf="submitted && f.Block.errors" class="invalid-feedback">
+                                     <div *ngIf="f.Block.errors.required">Block is required</div>
+                                 </div>
+                             </div>
+                             
+                             
+                             <div class="form-group col-3">
+                                 <b><label>Floor</label></b>
+                                 <p-dropdown [options]="Floor"  formControlName="Floor" filter="true">
+                                </p-dropdown>
+                                 
+                                 <div *ngIf="submitted && f.Floor.errors" class="invalid-feedback">
+                                     <div *ngIf="f.Floor.errors.required">Floor is required</div>
+                                 </div>
+                             </div>
+                             
+                             
+                             <div class="form-group col-3">
+                                 <b><label>Zone</label></b>
+                                 <p-dropdown [options]="Zone"   formControlName="Zone" filter="true">
+                                </p-dropdown>
+                                
+                                 <div *ngIf="submitted && f.Zone.errors" class="invalid-feedback">
+                                     <div *ngIf="f.Zone.errors.required">Floor is required</div>
+                                 </div>
+                                 
+                             </div>
+                             
+                       </div>
+                       <br>
+                    </div>
+               
+                </div>
+             
+             
+             </div>
+         
+         
+         </div>
+        </div>
+        
+
+        </div>
+
+ <br/>
+ <br/>
+
+ 
+
+<div class="text-center">
+    <button class="btn-aspen-orange"  (click)="addEmployee(registerForm.value)" type="submit">Add</button> &nbsp;
+     <button class="btn-aspen-orange" (click)="cancel()" type="reset">Cancel&nbsp; &nbsp; </button>
+</div>
+
+
+</form>
+ </div>
+</div>
+
+

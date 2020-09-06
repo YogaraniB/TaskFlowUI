@@ -1,0 +1,72 @@
+<div class="container">
+    <br>
+    <div class="row">
+        
+            
+       
+        <div class="col-md-3">
+            <h3 style="color:black">Client Details</h3>
+        <button (click)="exportAsXLSX()" class="btn-aspen-orange">Export</button>&nbsp;
+        
+           
+            <button type="button"  class="btn-aspen-orange" (click)="add()">Add&nbsp;<i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+    <br>
+
+
+    <p-dialog [header]="displayAddEditHeader" [position]="center" (onHide)="mode='Add'" [(visible)]="addVisible" [modal]="true"
+     [style]="{width: '80vw'}" appendTo="body" [maximizable]="true" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="true">
+    <app-client-add [displayAddEditHeader]="displayAddEditHeader" (changeMode)="mode='Add'" [editData]="editData" [mode]="mode" (callAllEmployees)="viewAllClents()" (addVisibleChild)="addVisible=addVisibleChild" ></app-client-add> 
+           
+</p-dialog>
+    <div class="col-xs-3">
+        
+        <input class="form-control" type="text" 
+        name="search" [(ngModel)]="searchText"
+         autocomplete="off" placeholder="&#61442; 
+          Start searching for a Client ">
+          <div *ngIf="(clients | filter: searchText).length === 0">No matching records found</div>
+        
+      </div>
+    
+       <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <table width="100%" id="t01">
+                <thead>
+                    <tr>
+                        <th>ClientId</th>
+                        <th>Name</th>
+                        <th>Group</th>
+                        <th>FirstName</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let client of clients | filter:searchText | paginate: { itemsPerPage: 5,totalItems: recordCount, currentPage: p }">
+                        <td width="10%" >{{client.clientid}}</td>
+                        <td width="10%" >{{client.clientName}}</td>
+                        <td width="10%" >{{client.groupName}}</td>
+                        <td width="10%" >{{client.firstName}}</td>
+                        <td width="10%">{{client.email}}</td>
+                        <td width="20%" >
+                            <button class="btn-aspen-orange" mat-icon-button *ngIf="!isEditable"  (click)="onEditClick(client)">
+                                <mat-icon>edit</mat-icon>
+                              </button> &nbsp;
+                              <button class="btn-aspen-orange" mat-icon-button *ngIf="!isEditable"  (click)="confirm(client.clientid)">
+                                <mat-icon>delete</mat-icon>
+                              </button>
+                              </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

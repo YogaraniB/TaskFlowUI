@@ -1,0 +1,100 @@
+
+        
+
+<div class="container">
+    <div class="super_container" style="background-repeat: no-repeat; background-size: cover">
+        
+            <br>
+            <h3 style="color:black">Site Details </h3>
+      <br>
+    
+    <form [formGroup]="siteform" (ngSubmit)="onSubmit()">
+
+        <div class="form-row">
+            <div class="form-group col-5">
+                <label>Select Client   <span style="color:#FF0000">*</span></label>
+                <p-dropdown [options]="Client"  formControlName="client" filter="true">
+                </p-dropdown>
+                
+                <div *ngIf="submitted && f.site.errors" class="invalid-feedback">
+                    <div *ngIf="f.site.errors.required">Client name is required</div>
+                </div>
+            </div>
+      
+            <br>
+            
+            <div class="form-group col-5">
+                <label>Region</label>
+                <input type="text" formControlName="region" placeholder="Enter Region" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.region.errors }" />
+                <div *ngIf="submitted && f.region.errors" class="invalid-feedback">
+                    <div *ngIf="f.region.errors.required">Region is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Email  <span style="color:#FF0000">*</span></label>
+                <input type="email" formControlName="email" placeholder="Enter Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.branch.errors.required">Email is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-5">
+                <label>Branch</label>
+                <input type="text" formControlName="branch" placeholder="Enter Branch" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.branch.errors }" />
+                <div *ngIf="submitted && f.branch.errors" class="invalid-feedback">
+                    <div *ngIf="f.branch.errors.required">Branch is required</div>
+                </div>
+            </div>
+
+            <div class="form-group col-5">
+                <label>Site Name  <span style="color:#FF0000">*</span></label>
+                <input type="text" formControlName="sitename" placeholder="Enter Site Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sitename.errors }" />
+                <div *ngIf="submitted && f.sitename.errors" class="invalid-feedback">
+                    <div *ngIf="f.sitename.errors.required">Site name is required</div>
+                </div>
+            </div>
+        </div>
+            <br>
+                <label><b><u>Address</u></b></label><br>
+                    <div formGroupName="Address" class="form-row">
+                    <div class="form-group col-3">
+                        <label>City  <span style="color:#FF0000">*</span></label>
+                        <input type="text" formControlName="City" placeholder="Enter City" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                            <div *ngIf="f.city.errors.required">City is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-3">
+                        <label>State  <span style="color:#FF0000">*</span></label>
+                        <input type="text" formControlName="State" placeholder="Enter State" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }"/>
+                        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                            <div *ngIf="f.state.errors.required">State is required</div>
+                        </div>
+                    </div>
+            
+                    
+                    <div class="form-group col-3">
+                            <label>Pincode  <span style="color:#FF0000">*</span></label>
+                            <input type="number" formControlName="Pincode" placeholder="Enter Pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+                            <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                                <div *ngIf="f.pincode.errors.required">Pincode is required</div>
+                            </div>
+                    </div>
+                </div>
+                        <!-- <div class="form-group col-5">
+                            <label>Company Name</label>
+                            <input type="text" formControlName="dep" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dep.errors }"/>
+                            <div *ngIf="submitted && f.dep.errors" class="invalid-feedback">
+                                <div *ngIf="f.dep.errors.required">Company Name is require</div>
+                            </div>
+                        </div> -->      
+                
+            
+
+            <div class="text-center">
+                <button  class="btn-aspen-orange" type="submit">Add</button> &nbsp;
+                &nbsp; &nbsp; &nbsp; <button class="btn-aspen-orange" type="reset">Clear &nbsp; &nbsp; </button>
+            </div>
+        </form>
+        </div>

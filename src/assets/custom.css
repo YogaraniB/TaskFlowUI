@@ -1,0 +1,220 @@
+/* PIO customer css */
+
+
+/*New Dashboard Design*/
+
+:root {
+    --tab-bg: #2a6ebb;
+    --bg-color: #eaf3fa;
+    --default-color: #ffffff;
+    --defaultText-color: #ffffff;
+    --defaultText-btn: #ffffff;
+    --btn-bg: #ff7900;
+    --icon-bg: #ff7900;
+    --text-color: #ff7900;
+}
+
+.pNg-wrapper {
+    min-height: 100%;
+    background: var(--bg-color);
+}
+
+.pNg-sidebar,
+.pNg-dashboard {
+    background: var(--default-color);
+}
+
+.pNg-sidebar {
+    width: 350px;
+    padding: 10px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.pNg-dashboard {
+    width: 100%;
+    padding: 10px;
+}
+
+.pNg-custom-header {
+    background-color: var(--tab-bg);
+}
+
+.pNg-sidebar .custom-btn,
+.pNg-dashboard .custom-btn {
+    /*border-radius: 4px 4px 0 0;
+    overflow: hidden;*/
+    color: var(--defaultText-btn);
+    width: 100%;
+    height: 45px;
+    margin-top: 0;
+}
+
+.pNg-wrapper .custom-btn,
+.pNg-dashboard .custom-btn {
+    background-color: transparent;
+    border: 0;
+    width: auto;
+    color: var(--defaultText-btn);
+}
+
+.pNg-wrapper .custom-btn {
+    width: 100%;
+}
+
+.pNg-dashboard .custom-btn {
+    width: auto;
+}
+
+.pNg-wrapper .custom-btn:hover,
+.pNg-dashboard .custom-btn:hover {
+    color: var(--defaultText-btn);
+}
+
+.pNg-wrapper .custom-btn:focus,
+.pNg-dashboard .custom-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.pNg-dashboard-header .ui-button.ui-button-icon-only .ui-button-text {
+    padding: 0;
+}
+
+.pNg-wrapper .card {
+    border: 0;
+    margin: 0 0 10px 0;
+}
+
+.pNg-sidebar .card-header,
+.pNg-dashboard .card-header {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+/*.pNg-sidebar .card-header button {
+  }*/
+
+.pNg-wrapper [data-toggle="collapse"] .fa:before {
+    font-size: 20px;
+    /*content: "\f106";*/
+}
+
+
+/*.pNg-wrapper [data-toggle="collapse"].collapsed .fa:before {
+  content: "\f107";
+}*/
+
+.pNg-wrapper .card-body {
+    padding: 0 !important;
+}
+
+.collapse-body {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-top: 3px solid var(--tab-bg);
+    margin-top: -3px;
+}
+
+.p-btn-custom .ui-button {
+    background-color: var(--btn-bg)!important;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.p-buttn-refresh .ui-button {
+    width: 30px!important;
+    height: 30px;
+    margin: 0;
+    font-size: 16px;
+    border: 0!important;
+}
+
+.p-btn-custom .ui-button:focus {
+    outline: none!important;
+    box-shadow: none !important;
+}
+
+body .ui-button.ui-button-text-only .ui-button-text {
+    padding: 0 10px!important;
+}
+
+radial-gauge {
+    margin: 0 auto;
+}
+
+body .p-custom-tooltip {
+    color: var(--text-color);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.pNg-custom-drag {
+    width: 33.33%;
+    display: block;
+    padding: 0;
+}
+
+.pNg-custom-box .card-header {
+    padding: 10px!important;
+    /* border-radius: 5px; */
+}
+
+.pNg-custom-box .card {
+    border: 0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.pNg-custom-box .card-body {
+    border: 1px solid #afafaf;
+    padding: 0px!important;
+}
+
+.pNg-custom-box .card-body .collapse {
+    padding: 10px;
+    display: flex;
+}
+
+
+/* /manage-schedule-column/ */
+
+.manage-schedule-column [data-toggle="collapse"] .fa:before {
+    font-size: 20px;
+    content: "\f106";
+}
+
+.manage-schedule-column [data-toggle="collapse"].collapsed .fa:before {
+    content: "\f107";
+}
+
+.manage-schedule-column .pNg-dashboard-header {
+    color: #ffffff;
+}
+
+.manage-schedule-column label {
+    color: #000;
+    font-weight: 400;
+}
+
+.heading_container {
+    padding: 5px 10px!important;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    border-radius: 3px 3px 0 0;
+}
+
+.heading_container h4 {
+    font-weight: 500 !important;
+}
+
+body .ui-button.ui-button-icon-only .ui-button-text {
+    padding: 0!important;
+}
+.error-message {
+    color: red;
+}
